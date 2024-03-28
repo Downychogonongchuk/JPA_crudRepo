@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>데이터 입력</title>
+    <style>
+        .wrap {
+            width: 900px;
+            margin: 0 auto;
+        }
+        .wrap>div {
+            font-size: 1.5em;
+            width: 500px;
+            border: 1px solid;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        .i-form {
+            height: 150px;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .i-form>div {
+            display: flex;
+            justify-content: space-between;
+        }
+        .i-form>div>input {
+            width: 300px;
+        }
+        input[type="submit"] {
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <h1>데이터 입력</h1>
+    <hr>
+    <div>
+        <form th:action="@{dataProc}" method="post" class="i-form">
+            <div>
+                <label>문자열</label>
+                <input type="text" name="strData">
+            </div>
+            <div>
+                <label>숫자</label>
+                <input type="number" name="intData">
+            </div>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+</div>
+</body>
+<script th:inline="javascript">
+    let msg = [[${msg}]];
+    if(msg != null){
+        alert(msg);
+    }
+</script>
+</html>

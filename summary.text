@@ -1,0 +1,11 @@
+
+
+> JpaDataRepositoty > JpaRepository를 상속 >  CrudRepository를 상속 //extends ListCrudRepository
+CrudRepository는 CRUD 작업을 위한 다양한 메소드를 제공
+save(S entity)
+findById(ID primaryKey)
+findAll()
+deleteById(ID primaryKey)
+count()
+
+model vs modelandview
